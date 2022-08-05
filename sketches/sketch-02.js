@@ -3,7 +3,8 @@ const math = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 
 const randrgba = () => {
-  return `rgba(${random.range(100, 255)}, ${random.range(0, 255)}, ${random.range(150, 255)}, ${random.range(0.1, 1)})`
+  return `rgba(${random.range(100, 255)}, ${random.range(0, 255)}, 
+  ${random.range(150, 255)}, ${random.range(0.1, 1)})`
 }
 
 const settings = {
@@ -22,7 +23,7 @@ const sketch = () => {
     const h = width * 0.1;
     let x, y;
     
-    const num = random.range(10, 200);
+    const num = random.range(10, 50);
     const radius = width * 0.2;
     
     for (let i = 0; i < num; i++) {
@@ -34,16 +35,6 @@ const sketch = () => {
     x = cx + radius * Math.sin(angle);
     y = cy + radius * Math.cos(angle);
 
-    // context.save();
-    // context.translate(x, y);
-    // context.rotate(-angle);
-    // context.scale(random.range(0.5, 6), random.range(0.1, 0.5));
-    
-    // context.beginPath();
-    // context.rect(-w * random.range(0, 3), random.range(0, h * 0.1), w, h);
-    // context.fill();
-    // context.restore();
-
     context.save();
     context.translate(cx, cy);
     context.rotate(-angle);
@@ -53,7 +44,8 @@ const sketch = () => {
     context.strokeStyle = randrgba();
 
     context.beginPath();
-    context.arc(random.range(1, 50), random.range(3, 15), radius * random.range(0.1, 1.5), slice * random.range(1, -8) , slice * random.range(1, 5));
+    context.arc(random.range(1, 50), random.range(3, 15), radius * random.range(0.1, 1.5), 
+    slice * random.range(1, -8) , slice * random.range(1, 5));
     context.stroke();
 
     context.restore();
