@@ -1,3 +1,3 @@
-npm install canvas-sketch-util
+npm install canvas-sketch-cli -g
 
-canvas-sketch sketch-02 
+If permission issues run: brew install node    
